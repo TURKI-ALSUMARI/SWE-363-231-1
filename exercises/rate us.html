@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>rate us</title>
+</head>
+<body>
+  <p>
+    rate us
+
+  </p>
+  <form action="thank_you.html" method="get">
+    <lable>
+      rate the website out of 5:
+    </lable>
+    
+    <input type="number" name="rate" id="rate"  placeholder="choose from 0 to 5" max="5" min="0">
+    
+    <aside>
+    <label>
+      How often do you order:
+    </label>
+    <input list="order freq" name="order" id="order"  placeholder="choose from the following options">
+    <datalist id="order freq">
+      <option value="every day"></option>
+      <option value="once a week"></option>
+      <option value="every two weeks"></option>
+      <option value="once a month"></option>
+      <option value="less"></option>
+      <option value="more"></option>
+    </datalist>
+    </aside>
+    <aside>
+    <label>
+      rate the quality of the products out of 5:
+    </label>
+    <input list="quality" name="q" id="q"  placeholder="choose from 0 to 5">
+    <datalist id="quality">
+      <option value="0"></option>
+      <option value="1"></option>
+      <option value="2"></option>
+      <option value="3"></option>
+      <option value="4"></option>
+      <option value="5"></option>
+    </datalist>
+  </aside>
+
+  <aside>
+    <label>
+      rate the speed of delevry 5:
+    </label>
+    <input list="speed" name="s" id="s"  placeholder="choose from 0 to 5">
+    <datalist id="speed">
+      <option value="0"></option>
+      <option value="1"></option>
+      <option value="2"></option>
+      <option value="3"></option>
+      <option value="4"></option>
+      <option value="5"></option>
+    </datalist>
+  </aside>
+
+  <aside>
+    <label>
+      rate the delivery man out of 5:
+    </label>
+    <input type="range" name="d" id="d" autocomplete="given-name" placeholder="choose from 0 to 5" max="5" min="0">
+    
+  </aside>
+  <aside>
+    <label>
+      choose only one:
+      would you pay for scheduled delivery service?
+    </label>
+    <aside></aside>
+    <input type="checkbox" name="yes" id="yes" >
+    <label>
+      Yes
+    </label>
+    <input type="checkbox" name="no" id="no" >
+    <label>
+      No
+    </label>
+
+
+
+    
+  </aside>
+  <button>
+    submit
+  </button>
+  </form>
+  
+  
+  
+</body>
+</html>
