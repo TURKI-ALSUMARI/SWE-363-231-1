@@ -47,9 +47,9 @@ a{
 }
 a.order_link{
   text-decoration: underline;
-  cursor:default;
+  
 }
-a.rate_link:hover{
+a.order_link:hover{
   cursor:default;
 }
 a.rate_link:hover{
