@@ -1,0 +1,17 @@
+th {
+  text-transform: uppercase;
+  
+}
+td.top{
+  background-color: #e8900c; 
+}
+a{
+  color:#ffbb0f;
+}
+em{
+  background-color: #eb7664;
+}
+#the_most_important{
+  text-transform: uppercase;
+  background-color: #ff2403;
+}
