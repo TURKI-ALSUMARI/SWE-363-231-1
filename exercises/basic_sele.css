@@ -3,6 +3,9 @@ th {
   text-transform: uppercase;
   
 }
+tr:nth-child(odd){
+  background-color: #e8900c;
+}
 tr:hover{
   background-color: #eb7644;
   
@@ -14,9 +17,7 @@ tr.top:hover{
 tr.top{
   background-color: #e8900c; 
 }
-tr:nth-child(odd){
-  background-color: #e8900c;
-}
+
 a{
   color:#ffbb0f;
 }
