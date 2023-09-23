@@ -1,7 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Ubuntu:wght@500&display=swap');
 th {
   text-transform: uppercase;
   
+}
+p{
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+image{
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
 }
 tr:nth-child(odd){
   background-color: #e8900c;
@@ -20,6 +37,7 @@ tr.top{
 
 a{
   color:#ffbb0f;
+  
 }
 em{
   background-color: #eb7664;
@@ -29,8 +47,12 @@ em{
   background-color: #ff2403;
 }
 h1{
-  font-family: "ubuntu";
+  font-family: "poppins";
   text-transform: capitalize;
+  font-size: 84px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 63px; /* 75% */
 }
 p.x_large::first-letter{
   font-size: x-large;
