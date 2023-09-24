@@ -202,5 +202,35 @@ nav:hover  li{
 }
 
 
+div.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top: 5px solid #011526; 
+  border-radius: 50%;
+  animation: spin 2s linear infinite, hideLoader 2s 2s forwards; 
+  z-index: 9999;
+}
 
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
 
+@keyframes hideLoader {
+  0% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+
+@keyframes pageDisplay {
+  0% { opacity: 0; }
+  100% { opacity: 1; display: inline; }
+}
+#page{
+  opacity: 0;
+  animation: pageDisplay 2s 2s forwards;
+}
