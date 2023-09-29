@@ -234,3 +234,51 @@ div.loader {
   opacity: 0;
   animation: pageDisplay 2s 2s forwards;
 }
+.Copyright{
+  position:relative;
+  left: 650px;
+}
+.thank_img{
+  position:relative;
+  left: 568px;
+  
+}
+.wm{
+  text-align: left;
+  font-weight: 50px;
+  z-index: 1;
+  color: black;
+  position: relative;
+  bottom: 80px;
+  left: 850px;
+}
+.waterMark{
+  
+  text-align: left;
+  font-weight: 50px;
+  z-index: 1;
+  color: black;
+  position: relative;
+  bottom: 47px;
+  left: 180px;
+}
+.p{
+  text-align: left;
+  color: red;
+  font-size: 17px;
+}
+.np{
+  text-align: left;
+  position: relative;
+  font-size: 17px;
+  bottom: 36px;
+  left: 180px;
+}
+.per{
+  text-align: left;
+  position: relative;
+  font-size: 17px;
+  left: 180px;
+  bottom: 36px;
+  color: darkgreen;
+}
