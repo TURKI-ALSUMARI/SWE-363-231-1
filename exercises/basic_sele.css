@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Ubuntu:wght@500&display=swap');
+
 th {
   text-transform: uppercase;
   
@@ -281,4 +282,27 @@ div.loader {
   left: 180px;
   bottom: 36px;
   color: darkgreen;
+}
+
+
+
+@media (1px <= width <= 769px) {
+  
+  img{
+      max-width: 100%;
+  }
+  table{
+      font-size: 2em;
+  }
+  
+  .ham{
+      width:25px;
+      height:25px;
+  }
+  p{
+    font-size: 2em;
+  }
+  a{
+    font-size: 2em;
+  }
 }
