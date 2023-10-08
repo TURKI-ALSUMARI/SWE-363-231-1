@@ -93,7 +93,7 @@
     </div>
     
     <footer>
-      <a href="order.html">
+      <!-- <a href="order.html">
         Clik here to order
       </a>
     
@@ -105,7 +105,7 @@
       <aside></aside>
       <a href="rate us.html">
         Rate us
-      </a>
+      </a> -->
 
       <p class="x_large">
         You can <em>email us</em> If you have any concern or suggestions
@@ -125,4 +125,34 @@
     
   </div>
   </body>
+  <script>
+    const obj = [
+      {
+        text: "Clik here to order",
+        h: "order.html"
+
+      },
+      {
+        text: "Contact us",
+        h: "contact.html"
+      },
+      {
+        text: "Rate us",
+        h:"rate us.html"
+      },
+    ]
+
+
+    let footer = document.querySelector("footer")
+    obj.forEach(element => {
+      console.log(element.herf)
+      let link1 = document.createElement("a")
+      let t = document.createElement("aside")
+      link1.innerText = element.text
+      link1.href = element.h
+      t.appendChild(link1)
+      footer.prepend(t)
+    });
+    
+  </script>
 </html>
