@@ -66,18 +66,13 @@
             let gameEnded = false
             let winner = "";
             let counter =0;
-            //let key =document.querySelectorAll(".cell")
+            
             let reset = document.getElementsByClassName("reset")[0]
             reset.addEventListener("click", resetGame)
             // when we click on a cell add the letter 
             let board = document.getElementsByClassName("board")[0]
             //let k = navigator.keyboard.lock(["KeyW", "KeyA", "KeyS", "KeyD"]);
-           
-            board.addEventListener("click", cellClicked)
-            
-           
-
-            
+            board.addEventListener("click", cellClicked) 
             function cellClicked(event) {
                 let cell = event.target
                 let checkCells = document.querySelectorAll(".cell")

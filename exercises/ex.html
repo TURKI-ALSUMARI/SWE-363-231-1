@@ -91,7 +91,11 @@
         </p>
       </td>
     </div>
-    
+    <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+      <button id="closeBtn" type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
     <footer>
       <!-- <a href="order.html">
         Clik here to order
@@ -153,6 +157,10 @@
       t.appendChild(link1)
       footer.prepend(t)
     });
-    
+    const cbtn = document.getElementById("closeBtn");
+    const alert = document.querySelector("alert") ;
+    cbtn.addEventListener("click",()=>{
+    alert("use the tab to navigate the links then press enter to go to the")
+})
   </script>
 </html>
