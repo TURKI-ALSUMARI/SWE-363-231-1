@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
     <style>
         body {
             display: flex;
@@ -60,89 +59,103 @@
             <div class="cell"></div>
             <div class="cell"></div>
         </div>
-        <button>
-          reset
-        </button>
-        
-    </div>
-    <script>
-      // decided which turn is it
-      let turn = "X"
+        <button class = "reset">reset</button>
+        <script>
+            // decided which turn is it
+            let turn = "X"
             let gameEnded = false
-            turnCounter = 0
-            let winFlag = false
+            let winner = "";
+            let counter =0;
+            let reset = document.getElementsByClassName("reset")[0]
+            reset.addEventListener("click", resetGame)
             // when we click on a cell add the letter 
             let board = document.getElementsByClassName("board")[0]
+            
+           
             board.addEventListener("click", cellClicked)
             
+           
+            
+
             function cellClicked(event) {
                 let cell = event.target
-                if (cell.id==="resetButton"){
-                    cells = document.querySelectorAll('.cell');
-                    cells.forEach(cell => {
-            cell.innerText = "";
-            cell.style.backgroundColor = 'blanchedalmond';
-        });
-                   
-                turn = "X";
-                gameEnded = false;
-                turnCounter = 0;
-                winFlag = false;
-                letter = document.querySelector("#turn")
-                letter.innerText =  " Now it's "+turn+"'s Turn"
+                let checkCells = document.querySelectorAll(".cell")
+                if(cell.innerText === "" ){
+                  cell.innerText = turn;
+                  // change the color of the cell
+                  if(cell.innerText === "X"){
+                    cell.style.backgroundColor = '#FFC0CB';
+                  }
+                  else{
+                    cell.style.backgroundColor = '#90EE90';
+                  }
+                  // change turn
+                  turn = turn === "X" ? "O" : "X"
+                  //change title
+                  turnLetter = document.querySelector("h1")
+                  turnLetter.innerText = "Now it's is "+turn+" turn."
                 }
-                else{
-                if(!gameEnded){
-                
-                let stat = false
-                if (cell.innerText === "") {
-                    turnCounter = turnCounter + 1
-                    cell.innerText = turn
-                    stat = true
-                    if (cell.innerText === "X") {
-                        cell.style.backgroundColor = '#FFC0CB';
-                    } else {
-                        cell.style.backgroundColor = '#90EE90';
-                    }
-                    if (turnCounter === 9) {
-                        gameEnded = true
-                    }
-                }
-                
-                    
-                    const cells = document.querySelectorAll('.cell');
+                if (!gameEnded) {
                     const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
-                    for (const condination of winConditions) {
-                        const [a, b, c] = condination;
-                        if (cells[a].innerText === cells[b].innerText && cells[b].innerText === cells[c].innerText && cells[a].innerText !== "") {
-                            Winner = cells[a].innerText;
-                            letter = document.querySelector("#turn")
-                            letter.innerText = Winner + " Wins"
-                            winFlag = true
-                            gameEnded = true
-                        
-                        } 
+                    let cells = document.querySelectorAll(".cell");
+                    winConditions.forEach(elem => {
+                    let [a,b,c] =elem;
+                    if(cells[a].innerText === cells[b].innerText && cells[a].innerText === cells[c].innerText && cells[a].innerText !== ""){
+                        winner = cells[a].innerText
+                        flag =true
+                        gameEnded = true
+                        board.removeEventListener("click", cellClicked)
+                        document.querySelector("h1").innerText = cells[a].innerText + " Wins."
                     }
+                   
+                
+                    });
                     
-                
-                
-                if (turnCounter === 9 && !winFlag) {
-                            letter = document.querySelector("#turn")
-                            letter.innerText = "Draw"
-                        }
-                
-                
-                
-                if (stat === true && !gameEnded) {
-                    // change turn
-                    turn = turn === "X" ? "O" : "X"
-                    //change title
-                    letter = document.querySelector("#turn")
-                    letter.innerText =" Now it's "+turn+"'s Turn"
+                    
+                checkCells.forEach(element => {
+                    if(element.innerText === "X" || element.innerText === "O"){
+                    counter+=1
                 }
-            }}}
-    </script>
-    
+                
+            });
+                
+                if(!document.querySelector("h1").innerText.includes("Wins.") && counter === 9){
+                    
+                    document.querySelector("h1").innerText = "Draw"
+                    }   
+                     
+                  
+                }   
+                counter=0        
+            
+              
+            }
+            function resetGame(event){
+                let cells = document.querySelectorAll(".cell");
+                cells.forEach(element => {
+                    element.innerText = ""
+                    element.style.backgroundColor = "beige"
+                });
+                turn ="X"
+                gameEnded=false;
+                winner = "";
+                counter =0;
+                document.querySelector("h1").innerText = "Now it's is X turn."
+                turn = "X"
+                turnLetter = document.querySelector("h1")
+                turnLetter.innerText = "Now it's is "+turn+" turn."
+                board.addEventListener("click", cellClicked)
+                
+
+            }
+            
+            
+            
+                
+                
+                
+        </script>
+    </div>
 </body>
 
 </html>
