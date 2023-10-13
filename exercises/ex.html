@@ -162,5 +162,11 @@
     cbtn.addEventListener("click",()=>{
     alert("use the tab to navigate the links then press enter to go to the")
 })
+
+
+
+fetch('https://www.fruityvice.com/api/fruit/all', {mode: 'cors'})
+  .then(response => response.json())
+  .then(data => console.log(data));
   </script>
 </html>

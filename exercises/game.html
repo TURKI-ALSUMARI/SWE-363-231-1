@@ -60,16 +60,141 @@
             <div class="cell"></div>
         </div>
         <button class = "reset">reset</button>
+        <p>
+            to play using keyboard 
+            <aside></aside>
+            1- use the numbers from 1 to 9 
+            <aside></aside>
+            2- the turn is showed in the top 
+            <aside></aside>
+            3- cells are numberd from left to right 1 to 9 
+        </p>
         <script>
             // decided which turn is it
             let turn = "X"
             let gameEnded = false
             let winner = "";
             let counter =0;
-            
+            let page = document.body;
+            let cells = document.getElementsByClassName("cell")
             let reset = document.getElementsByClassName("reset")[0]
             reset.addEventListener("click", resetGame)
-            // when we click on a cell add the letter 
+            // when we click on a cell add the letter
+        
+            page.addEventListener("keydown", e =>{
+                // console.log("hello")
+                if(!document.querySelector("h1").innerText.includes("Wins")){
+                    if(e.key === "1" && cells[0].innerText === ""){
+                    cells[0].innerText = turn
+                    changeColor(turn, cells[0])
+                    checkCells(turn)
+                    
+                }
+                else if(e.key === "2" && cells[1].innerText === ""){
+                    cells[1].innerText = turn
+                    changeColor(turn, cells[1])
+                    checkCells(turn)
+                    
+                }
+                else if(e.key === "3" && cells[2].innerText === ""){
+                    cells[2].innerText = turn
+                    changeColor(turn, cells[2])
+                    checkCells(turn)
+                    
+                }
+                else if(e.key === "4" && cells[3].innerText === ""){
+                    cells[3].innerText = turn
+                    changeColor(turn, cells[3])
+                    checkCells(turn)
+                    
+                }
+                else if(e.key === "5" && cells[4].innerText === ""){
+                    cells[4].innerText = turn
+                    changeColor(turn, cells[4])
+                    checkCells(turn)
+                    
+                }
+                else if(e.key === "6" && cells[5].innerText === ""){
+                    cells[5].innerText = turn
+                    changeColor(turn, cells[5])
+                    checkCells(turn)
+                    
+                }
+                else if(e.key === "7" && cells[6].innerText === ""){
+                    cells[6].innerText = turn
+                    changeColor(turn, cells[6])
+                    checkCells(turn)
+                    
+                }
+                else if(e.key === "8" && cells[7].innerText === ""){
+                    cells[7].innerText = turn
+                    changeColor(turn, cells[7])
+                    checkCells(turn)
+                    
+                }
+                else if(e.key === "9" && cells[8].innerText === ""){
+                    cells[8].innerText = turn
+                    changeColor(turn, cells[8])
+                    checkCells(turn)
+                    
+                }
+
+            }
+                }
+                )
+            function changeColor(t,c){
+                if(t === "X"){
+                    c.style.backgroundColor = '#FFC0CB';
+                  }
+                  else{
+                    c.style.backgroundColor = '#90EE90';
+                  }  
+            }
+            function checkCells(t){
+                let checkCells = document.querySelectorAll(".cell")
+                
+                 
+                  // change turn
+                  turn = t === "X" ? "O" : "X"
+                  //change title
+                  let turnLetter = document.querySelector("h1")
+                  turnLetter.innerText = "Now it's is "+turn+" turn."
+                
+                if (!gameEnded) {
+                    const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+                    let cells = document.querySelectorAll(".cell");
+                    winConditions.forEach(elem => {
+                    let [a,b,c] =elem;
+                    if(cells[a].innerText === cells[b].innerText && cells[a].innerText === cells[c].innerText && cells[a].innerText !== ""){
+                        winner = cells[a].innerText
+                        flag =true
+                        gameEnded = true
+                        
+                        //page.removeEventListener("keydown",e =>{})
+                        document.querySelector("h1").innerText = cells[a].innerText + " Wins."
+                    }
+                   
+                
+                    });
+                    
+                    
+                checkCells.forEach(element => {
+                    if(element.innerText === "X" || element.innerText === "O"){
+                    counter+=1
+                }
+                
+            });
+                
+                if(!document.querySelector("h1").innerText.includes("Wins.") && counter === 9){
+                    
+                    document.querySelector("h1").innerText = "Draw"
+                    }   
+                     
+                  
+                }   
+                counter=0        
+            
+            }
             let board = document.getElementsByClassName("board")[0]
             //let k = navigator.keyboard.lock(["KeyW", "KeyA", "KeyS", "KeyD"]);
             board.addEventListener("click", cellClicked) 
