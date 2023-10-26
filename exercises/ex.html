@@ -131,6 +131,34 @@
   </div>
   </body>
   <script>
+
+class product{
+      constructor(name,price){
+        this.name = name
+        this.price = price
+      }
+      getName(){
+        return this.name
+      }
+      getPrice(){
+        return this.price
+      }
+    }
+    const p1 = new product("banana","1$")
+    const p2 = new product("apple", "2$")
+
+    const b = document.body
+    const div1 = document.createElement("div")
+    const div2 = document.createElement("div")
+    const aside = document.createElement("aside")
+    b.append(div1.innerText= p1.getName())
+    b.append(div1.innerText=" "+p1.getPrice())
+    b.append(aside)
+    b.append(div2.innerText = p2.getName())
+    b.append(div2.innerText = " "+p2.getPrice())
+    
+
+
     const obj = [
       {
         text: "Clik here to order",
