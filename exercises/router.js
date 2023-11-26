@@ -15,8 +15,8 @@ router.get("/contact", (req, res) => {
   res.sendFile(__dirname + "/contact.html");
 });
 
-router.get("/rate us", (req, res) => {
-  res.sendFile(__dirname + "/rate us.html");
+router.get("/rate-us", (req, res) => {
+  res.sendFile(__dirname + "/rate-us.html");
 });
 
 router.get("/ex-ar", (req, res) => {

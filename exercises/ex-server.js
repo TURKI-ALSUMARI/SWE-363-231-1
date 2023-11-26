@@ -1,9 +1,15 @@
 const express = require("express");
 const app = express();
-app.use(express.static(__dirname));
+
 
 const router = require('./router');
+app.use("/thank_you.html",function (req,res,next){
+  console.log("Your request has been processed")
+  next();
+})
 app.use(router)
+app.use(express.static(__dirname));
+
 
 // app.get("/index", (req, res) => {
 //   res.sendFile(__dirname + "/index.html");
