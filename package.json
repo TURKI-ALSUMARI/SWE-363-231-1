@@ -1,5 +1,5 @@
 {
-   "scripts": {"start":"node apex-server.js"},
+   "scripts": {"start":"node ex-server.js"},
   "dependencies": {
     "express": "^4.18.2"
    
