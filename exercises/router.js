@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express();
 
-
-
-router.get("/index", (req, res) => {
+router.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
+
+
 
 router.get("/game", (req, res) => {
   res.sendFile(__dirname + "/game.html");

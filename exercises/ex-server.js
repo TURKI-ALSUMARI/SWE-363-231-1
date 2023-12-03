@@ -11,9 +11,9 @@ app.use(router)
 app.use(express.static(__dirname));
 
 
-// app.get("/index", (req, res) => {
-//   res.sendFile(__dirname + "/index.html");
-// });
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
 
 // app.get("/game", (req, res) => {
 //   res.sendFile(__dirname + "/game.html");
