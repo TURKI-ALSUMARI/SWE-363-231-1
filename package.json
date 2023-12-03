@@ -1,5 +1,5 @@
 {
-  "scripts": {"start":"node app.js"},
+  "scripts": {"start":"node ex-server.js"},
   "dependencies": {
     "http-server": "^14.1.1",
     "react": "^18.2.0",
